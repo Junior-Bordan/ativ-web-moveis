@@ -1,34 +1,26 @@
-// Theme toggle functionality
-const temaBtn = document.getElementById('temaBtn');
-const htmlElement = document.documentElement;
+// script.js
+// Dark mode toggle functionality
 
-// Load saved theme preference
-const savedTheme = localStorage.getItem('theme') || 'light';
-htmlElement.setAttribute('data-theme', savedTheme);
-updateThemeButton(savedTheme);
+const toggleButton = document.getElementById('dark-mode-toggle');
+const body = document.body;
 
-// Toggle theme on button click
-temaBtn.addEventListener('click', function() {
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    htmlElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeButton(newTheme);
-});
-
-// Update button icon based on theme
-function updateThemeButton(theme) {
-    temaBtn.textContent = theme === 'light' ? '🌙' : '☀️';
+// Load the preferred theme from localStorage
+const currentTheme = localStorage.getItem('data-theme') || 'light';
+body.setAttribute('data-theme', currentTheme);
+if (currentTheme === 'dark') {
+    toggleButton.checked = true;
 }
 
-// Contact form submission
-function submitContactForm() {
-    alert("Faço votos que esteja bem!");
-}
+// Function to toggle dark mode
+const toggleDarkMode = () => {
+    if (body.getAttribute('data-theme') === 'dark') {
+        body.setAttribute('data-theme', 'light');
+        localStorage.setItem('data-theme', 'light');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('data-theme', 'dark');
+    }
+};
 
-// Event listener for form submission
-document.getElementById('formContato').addEventListener('submit', function(event) {
-    event.preventDefault();
-    submitContactForm();
-});
+// Event listener for button clicks
+toggleButton.addEventListener('click', toggleDarkMode);
