@@ -1,30 +1,32 @@
-// ===== TEMA COM PERSISTÊNCIA =====
+// ===== BOTÃO DE TEMA =====
 const temaBtn = document.getElementById("temaBtn");
 
-// Carrega tema salvo
-if (localStorage.getItem("tema") === "dark") {
-    document.body.classList.add("dark");
+// ===== CARREGAR TEMA SALVO =====
+const temaSalvo = localStorage.getItem("data-theme") || "light";
+document.body.setAttribute("data-theme", temaSalvo);
+
+// Ajusta ícone inicial
+if (temaSalvo === "dark") {
+    temaBtn.textContent = "☀️";
+} else {
+    temaBtn.textContent = "🌙";
 }
 
-// Alterna tema
+// ===== ALTERAR TEMA AO CLICAR =====
 temaBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+    let temaAtual = document.body.getAttribute("data-theme");
 
-    // Salva no navegador
-    if (document.body.classList.contains("dark")) {
-        localStorage.setItem("tema", "dark");
+    if (temaAtual === "dark") {
+        document.body.setAttribute("data-theme", "light");
+        localStorage.setItem("data-theme", "light");
+        temaBtn.textContent = "🌙";
     } else {
-        localStorage.setItem("tema", "light");
+        document.body.setAttribute("data-theme", "dark");
+        localStorage.setItem("data-theme", "dark");
+        temaBtn.textContent = "☀️";
     }
 });
 
-// ===== MENU RESPONSIVO =====
-const menuBtn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-
-menuBtn.addEventListener("click", () => {
-    menu.classList.toggle("show");
-});
 
 // ===== VALIDAÇÃO DO FORMULÁRIO =====
 const form = document.getElementById("formContato");
@@ -43,7 +45,7 @@ form.addEventListener("submit", function(e) {
         return;
     }
 
-    // Regex para validar email
+    // Validação de email
     let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regex.test(email)) {
@@ -55,6 +57,6 @@ form.addEventListener("submit", function(e) {
     msg.innerText = "Mensagem enviada com sucesso!";
     msg.style.color = "green";
 
-    // Limpa formulário
+    // Limpar formulário
     form.reset();
 });
