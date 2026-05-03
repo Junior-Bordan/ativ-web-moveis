@@ -1,26 +1,32 @@
-const temaSwitch = document.getElementById("temaSwitch");
+// ===== TEMA COM PERSISTÊNCIA =====
+const temaBtn = document.getElementById("temaBtn");
 
 // Carrega tema salvo
-const temaSalvo = localStorage.getItem("data-theme") || "light";
-document.body.setAttribute("data-theme", temaSalvo);
-
-// Ajusta switch
-if (temaSalvo === "dark") {
-    temaSwitch.checked = true;
+if (localStorage.getItem("tema") === "dark") {
+    document.body.classList.add("dark");
 }
 
-// Alternar tema
-temaSwitch.addEventListener("change", () => {
-    if (temaSwitch.checked) {
-        document.body.setAttribute("data-theme", "dark");
-        localStorage.setItem("data-theme", "dark");
+// Alterna tema
+temaBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    // Salva no navegador
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("tema", "dark");
     } else {
-        document.body.setAttribute("data-theme", "light");
-        localStorage.setItem("data-theme", "light");
+        localStorage.setItem("tema", "light");
     }
 });
 
-// ===== FORMULÁRIO =====
+// ===== MENU RESPONSIVO =====
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+// ===== VALIDAÇÃO DO FORMULÁRIO =====
 const form = document.getElementById("formContato");
 const msg = document.getElementById("msg");
 
@@ -31,11 +37,13 @@ form.addEventListener("submit", function(e) {
     let email = document.getElementById("email").value.trim();
     let mensagem = document.getElementById("mensagem").value.trim();
 
+    // Verifica campos vazios
     if (nome === "" || email === "" || mensagem === "") {
         alert("Preencha todos os campos!");
         return;
     }
 
+    // Regex para validar email
     let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regex.test(email)) {
@@ -43,8 +51,10 @@ form.addEventListener("submit", function(e) {
         return;
     }
 
+    // Simulação de envio
     msg.innerText = "Mensagem enviada com sucesso!";
     msg.style.color = "green";
 
+    // Limpa formulário
     form.reset();
 });
