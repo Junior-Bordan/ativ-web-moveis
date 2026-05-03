@@ -8,57 +8,68 @@
 </head>
 <body>
 
-<header>
-    <nav>
-        <h2>Meu Portfólio</h2>
+    <!-- MENU -->
+    <header>
+        <nav>
+            <h2>Meu Portfólio</h2>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
 
+            <!-- Botão tema -->
+            <button id="temaBtn">🌙</button>
+        </nav>
+    </header>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <h1>Sobre Mim</h1>
+        <p>Olá! Meu nome é Ademar Bordan, tenho 33 anos. Casado. Sou de Campo Grande, Mato Grosso do Sul. Trabalho no setor privado, sou auxiliar administrativo, e faço a apuração e conferência [...]
+ 	Sou estudante de programação e Engenharia de Software, e apaixonado por música, filmes e tecnologia.</p>
+        <p>Hobbies: 
+ 	 Tenho como hobbies tocar/praticar violão e guitarra, também toco teclado e, além da música, gosto de jogar xadrez e vídeo game, assistir aos jogos do meu time do coração e assistir a filmes [...]</p>
+    </section>
+
+    <!-- FORMAÇÃO -->
+    <section id="formacao">
+        <h1>Formação</h1>
         <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#formacao">Formação</a></li>
-            <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li>Curso: Engenharia de Software (Cursando)</li>
+            <li>Instituição: UNINTER</li>
+            <li>Curso: Técnico em Contabilidade</li>
+            <li>Instituição: CONTEP</li>
+            <li>Curso: Montagem e manutenção de Micro</li>
+            <li>Instituição: Microlins</li>            
+            <li>Idiomas: Português (nativo), Inglês (Fluente), Espanhol (Iniciante)</li>
         </ul>
+    </section>
 
-        <!-- Switch de tema -->
-        <label class="switch">
-            <input type="checkbox" id="temaSwitch">
-            <span class="slider"></span>
-        </label>
-    </nav>
-</header>
+    <!-- PORTFÓLIO -->
+    <section id="portfolio">
+        <h1>Portfólio</h1>
+        <p>Confira meus projetos:</p>
+        <ul>
+            <li><a href="https://junior-bordan.github.io/Personal-page/">Atividade Disciplina: Fundamentos de Desenvolvimento de Softwares</a></li>
+            <li><a href="https://univirtuscdn.uninter.com/INTERACAO/OBIJLRJZCCMXPKF/ED980988EF06FEA8A951CD28F45F6135.pdf?response-content-disposition=inline%3B%20filename%3D%22Ademar_Bordan_Comunicaca[...]">Seu projeto</a></li>
+        </ul>
+    </section>
 
-<section id="sobre">
-    <h1>Sobre Mim</h1>
-    <p>Olá! Meu nome é Ademar Bordan, tenho 33 anos. Casado. Sou de Campo Grande, Mato Grosso do Sul...</p>
-</section>
+    <!-- CONTATO -->
+    <section id="contato">
+        <h1>Contato</h1>
 
-<section id="formacao">
-    <h1>Formação</h1>
-    <ul>
-        <li>Curso: Engenharia de Software (Cursando)</li>
-        <li>Instituição: UNINTER</li>
-    </ul>
-</section>
+        <form id="formContato">
+            <input type="text" id="nome" placeholder="Seu nome">
+            <input type="email" id="email" placeholder="Seu email">
+            <textarea id="mensagem" placeholder="Digite sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
 
-<section id="portfolio">
-    <h1>Portfólio</h1>
-    <ul>
-        <li><a href="https://junior-bordan.github.io/Personal-page/">Projeto 1</a></li>
-    </ul>
-</section>
-
-<section id="contato">
-    <h1>Contato</h1>
-
-    <form id="formContato">
-        <input type="text" id="nome" placeholder="Seu nome">
-        <input type="email" id="email" placeholder="Seu email">
-        <textarea id="mensagem" placeholder="Digite sua mensagem"></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-
-    <p id="msg"></p>
-</section>
+        <p id="msg"></p>
+    </section>
 
 <script src="script.js"></script>
 </body>
