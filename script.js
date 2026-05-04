@@ -1,9 +1,11 @@
 // ===== BOTÃO DE TEMA =====
-const temaBtn = document.getElementById("temaBtn");
+const temaBtn = document.getElementById('temaBtn');
+const htmlElement = document.documentElement;
 
 // ===== CARREGAR TEMA SALVO =====
-const temaSalvo = localStorage.getItem("data-theme") || "light";
-document.body.setAttribute("data-theme", temaSalvo);
+const savedTheme = localStorage.getItem('theme') || 'light';
+htmlElement.setAttribute('data-theme', savedTheme);
+temaBtn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
 
 // Ajusta ícone inicial
 if (temaSalvo === "dark") {
@@ -13,18 +15,13 @@ if (temaSalvo === "dark") {
 }
 
 // ===== ALTERAR TEMA AO CLICAR =====
-temaBtn.addEventListener("click", () => {
-    let temaAtual = document.body.getAttribute("data-theme");
-
-    if (temaAtual === "dark") {
-        document.body.setAttribute("data-theme", "light");
-        localStorage.setItem("data-theme", "light");
-        temaBtn.textContent = "🌙";
-    } else {
-        document.body.setAttribute("data-theme", "dark");
-        localStorage.setItem("data-theme", "dark");
-        temaBtn.textContent = "☀️";
-    }
+temaBtn.addEventListener('click', function() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    temaBtn.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
 });
 
 
