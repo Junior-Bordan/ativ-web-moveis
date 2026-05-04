@@ -2,22 +2,30 @@
    CSS VARIABLES (Theming & Customization)
    ======================================== */
 :root {
-    --primary-color: #00bcd4;
+ --primary-color: #3498db;
     --primary-dark: #0097a7;
-    --bg-light: #f4f4f4;
-    --bg-dark: #121212;
-    --bg-dark-secondary: #1a1a1a;
-    --bg-dark-tertiary: #2a2a2a;
-    --text-light: #333;
-    --text-dark: #fff;
+
+    --bg-color: #f4f4f4;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e0e0e0;
+
+    --text-color: #333;
     --text-gray: #666;
+
     --header-bg: #222;
     --border-color: #ccc;
+
     --transition: 0.3s;
     --border-radius: 4px;
     --touch-target: 44px;
 }
 
+
+  html[data-theme="dark"] {
+    --primary-color: #1abc9c;
+  
+}
+      
 /* ========================================
    RESET & BASE STYLES
    ======================================== */
@@ -40,7 +48,7 @@ body {
 }
 
 /* ========================================
-   DARK MODE THEME
+   modo dark
    ======================================== */
 body.dark {
     background: var(--bg-dark);
@@ -67,7 +75,7 @@ body.dark textarea {
 }
 
 /* ========================================
-   HEADER & NAVIGATION
+   Cabeçalho & Navegação
    ======================================== */
 header {
     background: var(--header-bg);
