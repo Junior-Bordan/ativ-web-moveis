@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Configuração de caracteres e responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
     <title>Portfólio - Ademar Bordan</title>
+
+    <!-- Arquivo de estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- MENU -->
+    <!-- ========================================
+         HEADER / MENU DE NAVEGAÇÃO
+         ======================================== -->
     <header>
         <nav>
+            <!-- Nome do site -->
             <h2>Portfólio - Ademar Bordan</h2>
 
-            <!-- BOTÃO MENU MOBILE -->
+            <!-- Botão hamburguer (mobile) -->
             <button id="menuBtn">☰</button>
 
+            <!-- Menu principal -->
             <ul id="menu">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#formacao">Formação</a></li>
@@ -23,53 +32,63 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
 
-            <!-- Botão tema -->
+            <!-- Botão de troca de tema -->
             <button id="temaBtn">🌙</button>
         </nav>
     </header>
 
-    <!-- SOBRE -->
+    <!-- ========================================
+         SEÇÃO SOBRE
+         ======================================== -->
     <section id="sobre">
         <h1>Sobre Mim</h1>
+
         <p>
-            Olá! Meu nome é Ademar Bordan, tenho 33 anos. Sou casado. Residente de Campo Grande, Mato Grosso do Sul. 
-            Trabalho no setor privado, sou auxiliar administrativo, e faço a apuração e conferência tributária, auxiliando, também, meus colegas de trabalho, de forma remota. Atualmente estou no departamento fiscal. 
-            Sou estudante de programação e Engenharia de Software, e apaixonado por música, filmes e tecnologia.
+            Olá! Meu nome é Ademar Bordan, tenho 33 anos. Sou casado. Residente de Campo Grande, Mato Grosso do Sul...
         </p>
 
         <p>
-            Tenho como hobbies tocar/praticar violão e guitarra, também toco teclado e, além da música, gosto de jogar xadrez e vídeo game, assistir aos jogos do meu time do coração e assistir a filmes e séries com a minha esposa.
+            Tenho como hobbies tocar/praticar violão e guitarra...
         </p>
     </section>
 
-    <!-- FORMAÇÃO -->
+    <!-- ========================================
+         SEÇÃO FORMAÇÃO
+         ======================================== -->
     <section id="formacao">
         <h1>Formação</h1>
+
         <ul>
             <li>Curso: Engenharia de Software (Cursando)</li>
             <li>Instituição: UNINTER</li>
             <li>Curso: Técnico em Contabilidade</li>
             <li>Instituição: CONTEP</li>
             <li>Curso: Montagem e manutenção de Micro</li>
-            <li>Instituição: Microlins</li>            
+            <li>Instituição: Microlins</li>
             <li>Idiomas: Português (nativo), Inglês (Fluente), Espanhol (Iniciante)</li>
         </ul>
     </section>
 
-    <!-- PORTFÓLIO -->
+    <!-- ========================================
+         SEÇÃO PORTFÓLIO
+         ======================================== -->
     <section id="portfolio">
         <h1>Portfólio</h1>
         <p>Confira meus projetos:</p>
+
         <ul>
-            <li><a href="https://junior-bordan.github.io/Personal-page/">Atividade Disciplina: Fundamentos de Desenvolvimento de Softwares</a></li>
-            <li><a href="https://drive.google.com/file/d/1W1UHmdPwgsSzLCTxCpLdv7VsHIP85biU/view">Atividade Disciplina: Comunicação Empresarial</a></li>
+            <li><a href="https://junior-bordan.github.io/Personal-page/">Projeto 1</a></li>
+            <li><a href="https://drive.google.com/file/d/...">Projeto 2</a></li>
         </ul>
     </section>
 
-    <!-- CONTATO -->
+    <!-- ========================================
+         SEÇÃO CONTATO
+         ======================================== -->
     <section id="contato">
         <h1>Contato</h1>
 
+        <!-- Formulário -->
         <form id="formContato">
             <input type="text" id="nome" placeholder="Seu nome">
             <input type="email" id="email" placeholder="Seu email">
@@ -77,10 +96,11 @@
             <button type="submit">Enviar</button>
         </form>
 
+        <!-- Mensagem de retorno -->
         <p id="msg"></p>
     </section>
 
-    <!-- SCRIPT -->
+    <!-- Script JS -->
     <script src="script.js" defer></script>
 
 </body>
