@@ -1,5 +1,5 @@
 /* ========================================
-   CSS VARIABLES (THEME SYSTEM)
+   VARIÁVEIS DE TEMA
    ======================================== */
 :root {
     --primary-color: #3498db;
@@ -15,7 +15,6 @@
     --header-bg: #222;
     --border-color: #ccc;
 
-    /* NOVO (menu profissional) */
     --nav-bg: #ffffff;
     --nav-text: #333;
 
@@ -24,7 +23,7 @@
     --touch-target: 44px;
 }
 
-/* 🌙 DARK MODE */
+/* DARK MODE */
 html[data-theme="dark"] {
     --primary-color: #1abc9c;
 
@@ -38,288 +37,79 @@ html[data-theme="dark"] {
     --header-bg: #1a1a1a;
     --border-color: #333;
 
-    /* NOVO (menu dark) */
     --nav-bg: #2a2a2a;
     --nav-text: #ffffff;
 }
 
-/* ========================================
-   RESET & BASE STYLES
-   ======================================== */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* SCROLL SUAVE */
 html {
     scroll-behavior: smooth;
 }
 
+/* BASE */
 body {
     font-family: Arial, sans-serif;
     background: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
-    transition: background var(--transition), color var(--transition);
 }
 
-/* ========================================
-   HEADER & NAVIGATION
-   ======================================== */
+/* HEADER FIXO */
 header {
-    background: var(--header-bg);
-    color: white;
-    padding: 15px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* NAV FLEX */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* MENU PROFISSIONAL */
+/* MENU */
 nav ul {
     display: flex;
     list-style: none;
-    background: var(--nav-bg);
-    padding: 6px 12px;
-    border-radius: 10px;
-    gap: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-nav ul li {
-    margin: 0;
-}
-
-/* LINKS COMO BOTÕES */
+/* LINKS */
 nav a {
-    color: var(--nav-text);
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 6px;
-    transition: all var(--transition);
-    display: block;
 }
 
-/* HOVER MODERNO */
-nav a:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-1px);
-}
-
-/* FOCO ACESSÍVEL */
-nav a:focus,
-nav a:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-/* ========================================
-   NAVIGATION BUTTONS
-   ======================================== */
-.nav-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-buttons button {
-    padding: 8px 16px;
-    cursor: pointer;
-    min-height: var(--touch-target);
-    min-width: var(--touch-target);
-}
-
-/* ========================================
-   SECTIONS
-   ======================================== */
-section {
-    padding: 100px 20px;
-    min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 60px;
-}
-
-section:first-of-type {
-    margin-top: 60px;
-}
-
-/* ========================================
-   FORMS & INPUTS
-   ======================================== */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    gap: 15px;
-}
-
-input,
-textarea {
-    margin: 0;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    font-family: inherit;
-    font-size: 16px;
-    transition: border-color var(--transition), box-shadow var(--transition);
-    min-height: var(--touch-target);
-    background: var(--bg-secondary);
-    color: var(--text-color);
-}
-
-input::placeholder,
-textarea::placeholder {
-    color: var(--text-gray);
-}
-
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-/* ========================================
-   BUTTONS
-   ======================================== */
-button {
-    padding: 12px 20px;
-    border: none;
-    background: var(--primary-color);
-    color: white;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: background var(--transition);
-    font-weight: 500;
-    min-height: var(--touch-target);
-    font-size: 16px;
-}
-
-button:hover {
-    background: var(--primary-dark);
-}
-
-button:focus,
-button:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-/* ========================================
-   ACCESSIBILITY
-   ======================================== */
-:focus:not(:focus-visible) {
-    outline: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* ========================================
-   MOBILE MENU
-   ======================================== */
+/* BOTÃO MENU MOBILE */
 #menuBtn {
     display: none;
-    background: transparent;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
     font-size: 24px;
-    min-height: var(--touch-target);
 }
 
-#menuBtn:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+/* RESPONSIVO */
 @media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
 
     nav ul {
         display: none;
         flex-direction: column;
-        background: var(--nav-bg);
         position: absolute;
         top: 60px;
         right: 0;
-        width: 200px;
-        padding: 10px;
     }
 
-    nav ul li {
-        padding: 10px;
-    }
-
+    /* Classe ativada via JS */
     nav ul.show {
         display: flex;
     }
 
     #menuBtn {
         display: inline-block;
-    }
-
-    section {
-        padding: 80px 15px;
-        margin-top: 60px;
-    }
-
-    form {
-        max-width: 100%;
-    }
-
-    input,
-    textarea,
-    button {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    section {
-        padding: 60px 10px;
-        min-height: auto;
-    }
-
-    nav ul {
-        width: 100%;
-        right: 0;
-    }
-
-    nav ul li {
-        padding: 15px 20px;
     }
 }
