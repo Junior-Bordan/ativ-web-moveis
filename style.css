@@ -1,8 +1,8 @@
 /* ========================================
-   CSS VARIABLES (Theming & Customization)
+   CSS VARIABLES (THEME SYSTEM)
    ======================================== */
 :root {
- --primary-color: #3498db;
+    --primary-color: #3498db;
     --primary-dark: #0097a7;
 
     --bg-color: #f4f4f4;
@@ -20,12 +20,21 @@
     --touch-target: 44px;
 }
 
-
-  html[data-theme="dark"] {
+/* 🌙 DARK MODE (PROFISSIONAL) */
+html[data-theme="dark"] {
     --primary-color: #1abc9c;
-  
+
+    --bg-color: #121212;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+
+    --text-color: #ffffff;
+    --text-gray: #bbbbbb;
+
+    --header-bg: #1a1a1a;
+    --border-color: #333;
 }
-      
+
 /* ========================================
    RESET & BASE STYLES
    ======================================== */
@@ -41,41 +50,14 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: var(--bg-light);
-    color: var(--text-light);
+    background: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
     transition: background var(--transition), color var(--transition);
 }
 
 /* ========================================
-   modo dark
-   ======================================== */
-body.dark {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-}
-
-body.dark header {
-    background: var(--bg-dark-secondary);
-}
-
-body.dark nav ul {
-    background: var(--bg-dark-tertiary);
-}
-
-body.dark nav a {
-    color: var(--text-dark);
-}
-
-body.dark input,
-body.dark textarea {
-    background: var(--bg-dark-tertiary);
-    color: var(--text-dark);
-    border-color: var(--bg-dark);
-}
-
-/* ========================================
-   Cabeçalho & Navegação
+   HEADER & NAVIGATION
    ======================================== */
 header {
     background: var(--header-bg);
@@ -97,6 +79,7 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
+    background: var(--bg-tertiary);
 }
 
 nav ul li {
@@ -172,6 +155,8 @@ textarea {
     font-size: 16px;
     transition: border-color var(--transition), box-shadow var(--transition);
     min-height: var(--touch-target);
+    background: var(--bg-secondary);
+    color: var(--text-color);
 }
 
 input::placeholder,
@@ -224,12 +209,10 @@ button:active {
 /* ========================================
    ACCESSIBILITY
    ======================================== */
-/* Remove outlines for mouse users, keep for keyboard users */
 :focus:not(:focus-visible) {
     outline: none;
 }
 
-/* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -270,7 +253,7 @@ button:active {
     nav ul {
         display: none;
         flex-direction: column;
-        background: var(--bg-dark-tertiary);
+        background: var(--bg-tertiary);
         position: absolute;
         top: 60px;
         right: 0;
