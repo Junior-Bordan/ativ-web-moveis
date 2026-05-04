@@ -1,3 +1,20 @@
+// ===== MENU MOBILE =====
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+// Abrir/fechar menu
+menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll("#menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("show");
+    });
+});
+
+
 // ===== BOTÃO DE TEMA =====
 const temaBtn = document.getElementById('temaBtn');
 const htmlElement = document.documentElement;
